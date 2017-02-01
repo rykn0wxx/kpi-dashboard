@@ -36,3 +36,12 @@ h1.al-title {
     font-size: 19px;
   }
 }
+
+@media screen and (max-width: $resXS) {
+  .al-title {
+    display: none;
+  }
+  .al-breadcrumb {
+    float: none;
+  }
+}

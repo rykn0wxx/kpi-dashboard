@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xlg-6 col-md-12 col-sm-6">
+      <p class="input-group">
+        <span class="input-group-btn">
+          <button  ng-click="toOpen()" class="btn btn-primary pull-right btn-daterange" id="daterange-btn">
+            <span ng-if="!dt" style="min-width:140px; display:block;"><i class="fa fa-calendar fa-fw"></i> Select Month Coverage  <i class="fa fa-caret-down fa-fw"></i> </span>
+            <span ng-if="dt" style="min-width:140px; display:block;"><i class="fa fa-calendar fa-fw"></i> {{dt | date:'yyyy MMM' }}   <i class="fa fa-caret-down fa-fw"></i> </span>
+          </button>
+        </span>
+        <input type="text" class="hide form-control inp-daterange" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="dt" is-open="opened" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
+      </p>
+  </div>
+</div>
+<current-performance></current-performance>

@@ -39,11 +39,14 @@ $angle-right: "\f101";
     background-color: $primary;
     a.al-sidebar-list-link {
       color: $sidebar-text;
+      background-color: rgba(0,0,0,0.2);
       b {
         color: $sidebar-text;
       }
     }
   }
+  border-top: 1px solid rgba(0,0,0,0.2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
 .al-sidebar-list-item, .ba-sidebar-sublist-item {
@@ -73,7 +76,7 @@ a.al-sidebar-list-link {
   overflow: hidden;
   cursor: pointer;
   &:hover {
-    color: $primary;
+    color: mix(#ffffff, $primary, 50%);
     b {
       color: $primary;
     }
@@ -141,7 +144,7 @@ a.al-sidebar-list-link {
       height: auto;
       line-height: 29px;
       &:hover {
-        color: $primary;
+        color: mix(#ffffff, $primary, 70%);
       }
     }
     &.selected:not(.with-sub-menu) > a {

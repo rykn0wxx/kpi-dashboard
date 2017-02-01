@@ -12,6 +12,8 @@ angular.module('BlurAdmin', [
   'ui.slimscroll',
   'ngJsTree',
   'angular-progress-button-styles',
+  'ui.knob',
+  'daterangepicker',
 
   'BlurAdmin.theme',
   'BlurAdmin.pages'

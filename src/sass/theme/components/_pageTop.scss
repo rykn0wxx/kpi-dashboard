@@ -2,7 +2,8 @@
   background-color: $sidebar;
   position: fixed;
   z-index: 904;
-  box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.5);
+  //box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 20px 25px -10px rgba(0,0,0,0.3);
   height: 66px;
   width: 100%;
   min-width: $resMin;
@@ -24,7 +25,13 @@ a.al-logo {
   line-height: 60px;
 
   span {
-    color: $primary;
+    color: $primary-light;
+  }
+  &:hover {
+    color: tint($sidebar-text, 30%);
+    span {
+      color: tint($primary-light, 10%);
+    }
   }
 }
 

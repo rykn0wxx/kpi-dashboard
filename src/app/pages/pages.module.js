@@ -1,61 +1,50 @@
 /**
- * @author v.lugovsky
- * created on 16.12.2015
+ * @author rykn0wxx
+ * created on 31 01 2017
  */
 (function () {
   'use strict';
 
   angular.module('BlurAdmin.pages', [
     'ui.router',
+    'chart.js',
 
     'BlurAdmin.pages.dashboard',
-    'BlurAdmin.pages.ui',
-    'BlurAdmin.pages.components',
-    'BlurAdmin.pages.form',
-    'BlurAdmin.pages.tables',
-    'BlurAdmin.pages.charts',
-    'BlurAdmin.pages.maps',
-    'BlurAdmin.pages.profile',
+    'BlurAdmin.pages.version'
   ])
-      .config(routeConfig);
+      .config(routeConfig).config(chartJsConfig);
 
   /** @ngInject */
   function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
     $urlRouterProvider.otherwise('/dashboard');
-
-    baSidebarServiceProvider.addStaticItem({
-      title: 'Pages',
-      icon: 'ion-document',
-      subMenu: [{
-        title: 'Sign In',
-        fixedHref: 'auth.html',
-        blank: true
-      }, {
-        title: 'Sign Up',
-        fixedHref: 'reg.html',
-        blank: true
-      }, {
-        title: 'User Profile',
-        stateRef: 'profile'
-      }, {
-        title: '404 Page',
-        fixedHref: '404.html',
-        blank: true
-      }]
+  }
+  function chartJsConfig (ChartJsProvider, baConfigProvider) {
+    var layoutColors = baConfigProvider.colors;
+    ChartJsProvider.setOptions({
+      // chartColors: [
+      //   layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.primaryLight
+      // ],
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: {
+        duration: 1000
+      },
+      scale: {
+        gridLines: {
+          color: layoutColors.border
+        },
+        scaleLabel: {
+          display: false
+        }
+      }
     });
-    baSidebarServiceProvider.addStaticItem({
-      title: 'Menu Level 1',
-      icon: 'ion-ios-more',
-      subMenu: [{
-        title: 'Menu Level 1.1',
-        disabled: true
-      }, {
-        title: 'Menu Level 1.2',
-        subMenu: [{
-          title: 'Menu Level 1.2.1',
-          disabled: true
-        }]
-      }]
+    ChartJsProvider.setOptions('line', {
+      datasetFill: false
+    });
+    ChartJsProvider.setOptions('bar', {
+      tooltips: {
+        enabled: false
+      }
     });
   }
 

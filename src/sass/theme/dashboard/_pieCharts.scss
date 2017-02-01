@@ -2,24 +2,25 @@
   color: $default-text;
 
   .pie-chart-item-container {
-    position: relative;
-    padding: 0 15px;
-    float: left;
+    //position: relative;
+    //padding: 0 15px;
+    //float: left;
     box-sizing: border-box;
+    
 
     .panel {
       height: $small-panel-height;
     }
   }
   @media screen and (min-width: 1325px) {
-    .pie-chart-item-container {
-      width: 25%;
-    }
+    // .pie-chart-item-container {
+    //   width: 25%;
+    // }
   }
   @media screen and (min-width: 700px) and (max-width: 1325px)  {
-    .pie-chart-item-container {
-      width: 50%;
-    }
+    // .pie-chart-item-container {
+    //   width: 50%;
+    // }
   }
   @media screen and (max-width: 700px)  {
     .pie-chart-item-container {
@@ -76,7 +77,15 @@
     opacity: 0.9;
     .description-stats {
       padding-top: 8px;
-      font-size: 24px;
+      font-size: 14px;
+    }
+    > div {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
     }
   }
   .angular {
@@ -85,4 +94,30 @@
   .angular .chart {
     margin-top: 0;
   }
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  max-width: 100%;
+
+  > .pie-chart-item-container {
+    min-width: 0;
+    flex: 0 1 auto;
+  }
+
+  .pie-chart-item-container {
+    min-width: 300px;
+  }
+}
+
+
+current-performance {
+  flex-direction: column;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  box-sizing: border-box;
 }

@@ -14,11 +14,11 @@
 
   // main functional color scheme
   var colorScheme = {
-    primary: '#209e91',
-    info: '#2dacd1',
-    success: '#90b900',
-    warning: '#dfb81c',
-    danger: '#e85656',
+    primary: '#005eb8',
+    info: '#0262bb',
+    success: '#00a378',
+    warning: '#a34f00',
+    danger: '#c81a14',
   };
 
   // dashboard colors for charts

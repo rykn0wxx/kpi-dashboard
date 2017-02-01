@@ -1,0 +1,46 @@
+$default: #FAFFFA;
+$body-bg: #DFEBF6;
+$default-text: #050709;
+$help-text: #eeeeee;
+$label-text: #ffffff;
+
+$disabled: #dddddd;
+$disabled-bg: transparent;
+$border: #ffffff;
+$border-light: rgba(#ffffff, 0.2);
+$input-border: transparent;
+$input-background: rgba(#374850, 0.15);
+
+$sidebar: rgba(#000C17, 0.7);
+$sidebar-text: #dadfe1;
+$dropdown-text: #d4d4d4;
+$bootstrap-panel-text: #d5d5d5;
+$bootstrap-panel-bg: #0262bb;
+$mail-box: whitesmoke;
+$auth-panel-background: rgba(#000000, 0.55);
+$progress-background: rgba(#000000, 0.15);
+$progress-default: #ffffff;
+
+$primary: #005eb8 !default;
+$info: #0262bb !default;
+$success: #00a378 !default;
+$warning: #a34f00 !default;
+$danger: #c81a14 !default;
+
+$primary-light: tint($primary, 30%);
+$info-light: tint($info, 30%);
+$success-light: tint($success, 30%);
+$warning-light: tint($warning, 30%);
+$danger-light: tint($danger, 30%);
+
+$primary-dark: shade($primary, 15%);
+$info-dark: shade($info, 15%);
+$success-dark: shade($success, 15%);
+$warning-dark: shade($warning, 15%);
+$danger-dark: shade($danger, 15%);
+
+$primary-bg: tint($primary, 20%);
+$info-bg: tint($info, 20%);
+$success-bg: tint($success, 20%);
+$warning-bg: tint($warning, 20%);
+$danger-bg: tint($danger, 20%);
