@@ -11,7 +11,7 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('version.executive', {
+      .state('trending.executive', {
         url: '/executive',
         templateUrl: 'app/pages/version/executive/executive.html',
         title: 'Executive',
@@ -34,7 +34,7 @@
           }
         }
       })
-      .state('version.executive.kpi', {
+      .state('trending.executive.kpi', {
         url: '/{type}',
         templateUrl: 'app/pages/version/executive/currentPerformance/currentKpi.html',
         controller: 'CurrentKpiCtrl',

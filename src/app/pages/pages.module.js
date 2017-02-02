@@ -9,6 +9,7 @@
     'ui.router',
     'chart.js',
 
+    'BlurAdmin.pages.init',
     'BlurAdmin.pages.dashboard',
     'BlurAdmin.pages.version'
   ])

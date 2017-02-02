@@ -13,11 +13,11 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('version', {
-          url: '/version',
+        .state('trending', {
+          url: '/trending',
           template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
           abstract: true,
-          title: 'Version 2',
+          title: 'Trending',
           sidebarMeta: {
             icon: 'ion-android-laptop',
             order: 200,

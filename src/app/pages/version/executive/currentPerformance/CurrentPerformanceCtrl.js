@@ -9,7 +9,7 @@
       .controller('CurrentPerformanceCtrl', CurrentPerformanceCtrl);
 
   /** @ngInject */
-  function CurrentPerformanceCtrl($scope, $timeout, $window, $filter, baConfig, baUtil, urlUtil) {
+  function CurrentPerformanceCtrl($scope, $timeout, $window, $filter, baConfig, baUtil, urlUtil, csmMedia) {
     var pieColor = baUtil.hexToRGB(baConfig.colors.defaultText, 0.2);
     var ndx = $window.crossfilter;
     var _ = $window._;
@@ -254,6 +254,19 @@
       mode: 'month',
     };
 
+    $scope.med = {
+      xs: csmMedia('xs'),
+      sm: csmMedia('sm')
+    };
+    $scope.$watch(function() {
+      $scope.med = {
+        xs: csmMedia('xs'),
+        sm: csmMedia('sm')
+      };
+    });
+
+
+
     function toOpen () {
       $scope.opened = true;
     }
@@ -284,7 +297,7 @@
           }]
         },
         tooltips: {
-          //enabled: true
+          enabled: true,
           custom: customTp
         }
       }

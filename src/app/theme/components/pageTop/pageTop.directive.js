@@ -9,10 +9,13 @@
       .directive('pageTop', pageTop);
 
   /** @ngInject */
-  function pageTop() {
+  function pageTop(csmMedia) {
     return {
       restrict: 'E',
-      templateUrl: 'app/theme/components/pageTop/pageTop.html'
+      templateUrl: 'app/theme/components/pageTop/pageTop.html',
+      link: function pageTopLink ($scope) {
+        $scope.aaa = csmMedia;
+      }
     };
   }
 

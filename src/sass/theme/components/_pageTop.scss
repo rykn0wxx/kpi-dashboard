@@ -12,6 +12,9 @@
   &.scrolled {
     background-color: rgba(black, 0.85)
   }
+  .pull-left {
+    position: relative;
+  }
 }
 
 a.al-logo {
@@ -32,6 +35,37 @@ a.al-logo {
     span {
       color: tint($primary-light, 10%);
     }
+  }
+}
+
+.al-subname {
+  color: $sidebar-text;
+  font-size: 24px;
+  float: left !important;;
+  outline: none !important;
+  line-height: 60px;
+  padding-left: 15px;
+  animation-fill-mode: both;
+  &.ng-enter {
+    opacity: 0;
+    animation-duration: 2s;
+    animation-delay: 0.75s;
+    animation-name: zoomIn;
+    //position: absolute;
+  }
+  &.ng-leave {
+    opacity: 0;
+    animation-duration: 0.75s;
+    animation-name: zoomOut;
+    // position: absolute;
+    // float: left;
+  }
+  &::before, &::after {
+    content: ' ';
+    display: table;
+  }
+  &::after {
+    clear: both;
   }
 }
 
@@ -147,7 +181,7 @@ a.collapse-menu-link {
 }
 
 @media screen and (max-width: $resS) {
-  .search {
+  .al-subname, .search {
     display: none;
   }
 }

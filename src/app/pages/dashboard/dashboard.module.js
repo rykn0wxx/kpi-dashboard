@@ -13,8 +13,8 @@
     $stateProvider
       .state('dashboard', {
         url: '/dashboard',
-        templateUrl: 'app/pages/dashboard/dashboard.html',
-        title: 'Dashboard',
+        template: '<div ui-view="" autoscroll="true" autoscroll-body-top="></div>',
+        title: 'Executive KPI',
         sidebarMeta: {
           icon: 'ion-android-home',
           order: 0
