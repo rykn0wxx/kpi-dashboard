@@ -6,7 +6,7 @@
     //padding: 0 15px;
     //float: left;
     box-sizing: border-box;
-    
+
 
     .panel {
       height: $small-panel-height;
@@ -72,9 +72,22 @@
   }
   .description {
     display: inline-block;
-    padding: 20px 0 0 20px;
+    padding: 10px 0 0 10px;
     font-size: 18px;
     opacity: 0.9;
+    .kpi {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 8px;
+      > a {
+        color: $default-text;
+        transition: all 0.3 linear;
+        &:hover {
+          background-color: rgba(0,0,0,0.1);
+        }
+      }
+    }
     .description-stats {
       padding-top: 8px;
       font-size: 14px;

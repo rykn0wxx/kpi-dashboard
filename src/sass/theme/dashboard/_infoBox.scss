@@ -1,0 +1,42 @@
+$infobox-boxshadow: 0px 20px 25px -10px rgba(0, 0, 0, 0.25);
+
+.rykn0wxx {
+
+  .info-box {
+    display: block;
+    min-height: 90px;
+    background: mix(#fafafa, #B0BEC5, 90%);;
+    width: 100%;
+    box-shadow: $infobox-boxshadow;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    .info-box-content {
+      padding: 5px 10px;
+      margin-left: 90px;
+    }
+    .info-box-number {
+      display: block;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .info-box-text {
+      display: block;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .info-box-icon {
+    border-radius: 2px 0;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 90px;
+    text-align: center;
+    font-size: 45px;
+    line-height: 90px;
+    background: rgba(0,0,0,0.1);
+  }
+}

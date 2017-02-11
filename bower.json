@@ -19,6 +19,7 @@
     "jquery-ui": "~1.12.1",
     "jquery.easing": "~1.3.1",
     "jquery.easy-pie-chart": "~2.1.6",
+    "sparkline": "jquery.sparkline#^2.1.2",
     "chart.js": "~2.4.0",
     "Ionicons": "ionicons#~2.0.1",
     "amcharts": "~3.15.2",
@@ -64,7 +65,15 @@
     "angular-daterangepicker": "^0.2.2",
     "material-design-iconic-font": "^2.2.0",
     "ng-knob": "^0.1.3",
-    "angular-cookies": "^1.6.1"
+    "angular-cookies": "^1.6.1",
+    "angular-dc": "^0.0.8",
+    "highcharts": "5.0.0",
+    "highcharts-ng": "^1.0.0",
+    "angular-material": "^1.1.3",
+    "angular-nvd3": "^1.0.9",
+    "angular-charts": "^0.2.7",
+    "accounting": "^0.3.2",
+    "restangular": "^1.6.1"
   },
   "resolutions": {
     "angular": "~1.5.8",
@@ -73,6 +82,22 @@
     "moment": "~2.10.6"
   },
   "overrides": {
+    "angular-material": {
+      "main": [
+        "angular-material.css"
+      ]
+    },
+    "highcharts": {
+      "main": [
+        "css/highstock.css",
+        "highstock.js",
+        "highcharts-more.js",
+        "modules/data.js",
+        "modules/exporting.js",
+        "modules/offline-exporting.js",
+        "modules/drilldown.js"
+      ]
+    },
     "amcharts": {
       "main": [
         "./dist/amcharts/amcharts.js",

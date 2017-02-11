@@ -9,13 +9,13 @@
       .directive('contentTop', contentTop);
 
   /** @ngInject */
-  function contentTop($location, $state) {
+  function contentTop($location, $state, $rootScope) {
     return {
       restrict: 'E',
       templateUrl: 'app/theme/components/contentTop/contentTop.html',
       link: function($scope) {
         $scope.$watch(function () {
-          $scope.activePageTitle = $state.current.title;
+          $rootScope.activePageTitle = $state.current.title;
         });
       }
     };

@@ -27,9 +27,11 @@
         'xl'        : '(min-width: 1920px)'                        ,
         'landscape' : '(orientation: landscape)'                   ,
         'portrait'  : '(orientation: portrait)'                    ,
-        'print' : 'print'
+        'print' : 'print',
+        'custom'    : '(min-width: 767px)'
       },
       MEDIA_PRIORITY: [
+        'custom',
         'xl',
         'gt-lg',
         'lg',

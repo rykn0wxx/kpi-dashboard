@@ -78,10 +78,11 @@ a {
 }
 
 .al-footer {
+  opacity: 0.5;
   height: 34px;
   padding: 0px 18px 0 $left-space;
   width: 100%;
-  position: absolute;
+  position: fixed;
   display: block;
   bottom: 0;
   font-size: 13px;

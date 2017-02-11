@@ -7,24 +7,34 @@
 
   angular.module('BlurAdmin.pages', [
     'ui.router',
+    'ngCookies',
     'chart.js',
+    'angularCharts',
+    'restangular',
 
-    'BlurAdmin.pages.init',
-    'BlurAdmin.pages.dashboard',
-    'BlurAdmin.pages.version'
+
+    'BlurAdmin.pages.dashboards',
+    'BlurAdmin.pages.drilldown',
+    'BlurAdmin.pages.rest'
+
   ])
-      .config(routeConfig).config(chartJsConfig);
+    .config(routeConfig);
 
   /** @ngInject */
-  function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
-    $urlRouterProvider.otherwise('/dashboard');
-  }
-  function chartJsConfig (ChartJsProvider, baConfigProvider) {
+  function routeConfig($urlRouterProvider, ChartJsProvider, baConfigProvider, DataProviderProvider) {
+    $urlRouterProvider.otherwise('/dashboards');
+
+    DataProviderProvider
+      .setBaseUrl('http://localhost:3000')
+      //.setBaseUrl('http://172.19.7.36:3000')
+      //.setEnv('dist');
+      .setEnv('dev');
+
     var layoutColors = baConfigProvider.colors;
     ChartJsProvider.setOptions({
-      // chartColors: [
-      //   layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.primaryLight
-      // ],
+      chartColors: [
+        layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.primaryLight
+      ],
       responsive: true,
       maintainAspectRatio: false,
       animation: {
@@ -39,7 +49,7 @@
         }
       }
     });
-    ChartJsProvider.setOptions('line', {
+    ChartJsProvider.setOptions('Line', {
       datasetFill: false
     });
     ChartJsProvider.setOptions('bar', {
@@ -47,6 +57,7 @@
         enabled: false
       }
     });
+
   }
 
 })();

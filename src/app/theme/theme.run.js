@@ -15,6 +15,8 @@
       $timeout(1000)
     ];
 
+    $rootScope.globals = {};
+    $rootScope.globals.isLoggedIn = false;
     var theme = themeLayoutSettings;
     if (theme.blur) {
       if (theme.mobile) {
@@ -36,6 +38,8 @@
     }, 1000);
 
     $rootScope.$baSidebarService = baSidebarService;
+    $rootScope.globals.isLoggedIn = true;
+
   }
 
 })();

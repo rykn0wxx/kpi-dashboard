@@ -27,6 +27,53 @@
       shade: function(color, weight) {
         return mix('#000000', color, weight);
       },
+    })
+    .constant('metrics', {
+      executive: [
+          {
+        	'field': 'revenue',
+        	'metric': 'Revenue',
+        	'format': 'formatMoney',
+        	'precision': 0,
+        	'misc': '$'
+        }, {
+        	'field': 'ebitPercent',
+        	'metric': 'EBIT %',
+        	'format': 'formatNumber',
+        	'precision': 2,
+        	'misc': '%'
+        }, {
+        	'field': 'iph',
+        	'metric': 'IPH',
+        	'format': 'formatNumber',
+        	'precision': 0,
+        	'misc': ''
+        }, {
+        	'field': 'sla',
+        	'metric': 'SLA Attainment',
+        	'format': 'formatNumber',
+        	'precision': 0,
+        	'misc': '%'
+        }, {
+        	'field': 'costPerTkt',
+        	'metric': 'Cost p/Incident',
+        	'format': 'formatMoney',
+        	'precision': 2,
+        	'misc': '$'
+        }, {
+        	'field': 'ebitPerTkt',
+        	'metric': 'EBIT p/Incident',
+        	'format': 'formatMoney',
+        	'precision': 2,
+        	'misc': '$'
+        }, {
+        	'field': 'revPerHead',
+        	'metric': 'Revenue p/Head',
+        	'format': 'formatMoney',
+        	'precision': 0,
+        	'misc': '$'
+        }
+      ]
     });
 
   function shade(color, weight) {

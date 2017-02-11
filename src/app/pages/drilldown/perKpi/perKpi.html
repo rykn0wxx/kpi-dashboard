@@ -1,0 +1,86 @@
+<div class="row">
+  <div class="col-xlg-6 col-md-12 col-sm-6">
+      <p class="input-group">
+        <span class="input-group-btn">
+          <button  ng-click="toOpen()" class="btn btn-primary pull-right btn-daterange" id="daterange-btn">
+            <span ng-if="!curMonth" style="min-width:140px; display:block;"><i class="fa fa-calendar fa-fw"></i> Select Month Coverage  <i class="fa fa-caret-down fa-fw"></i> </span>
+            <span ng-if="curMonth" style="min-width:140px; display:block;"><i class="fa fa-calendar fa-fw"></i> {{curMonth | date:'yyyy MMM' }}   <i class="fa fa-caret-down fa-fw"></i> </span>
+          </button>
+        </span>
+        <input type="text" class="hide form-control inp-daterange" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="curMonth" is-open="opened" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
+      </p>
+  </div>
+</div>
+
+<mini-block global-data="data"></mini-block>
+
+<div class="row">
+
+  <div class="col-md-12"
+    ba-panel
+    ba-panel-title="KPI1">
+    <div class="row">
+      <div class="col-md-8" ba-panel ba-panel-class="with-scroll">
+        <div class="chartjs-canvas-holder-third-row">
+          <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels"
+            chart-series="series" chart-click="changeData"></canvas>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="horizontal-scroll">
+          <button class="btn">KPI</button>
+          <button class="btn">KPI1</button>
+          <button class="btn">KPI3</button>
+          <button class="btn">asdasg</button>
+          <button class="btn">rsrhr</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12"
+    ba-panel
+    ba-panel-title="Detailed Projects">
+    <div class="row">
+      <div class="col-md-8" ba-panel ba-panel-class="with-scroll">
+        <div class="chartjs-canvas-holder-third-row">
+          <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels"
+            chart-series="series" chart-click="changeData"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="horizontal-scroll">
+    <table class="table table-hover">
+      <thead>
+      <tr class="black-muted-bg">
+        <th class="browser-icons"></th>
+        <th>Browser</th>
+        <th class="align-right">Visits</th>
+        <th class="table-arr"></th>
+        <th class="align-right">Purchases</th>
+        <th class="table-arr"></th>
+        <th class="align-right">%</th>
+        <th class="table-arr"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="item in metricsTableData" class="no-top-border">
+        <td><img ng-src="{{::( item.image | appImage )}}" width="20" height="20"></td>
+        <td ng-class="nowrap">{{item.browser}}</td>
+        <td class="align-right">{{item.visits}}</td>
+        <td class="table-arr"><i ng-class="{'icon-up': item.isVisitsUp, 'icon-down': !item.isVisitsUp }"></i></td>
+        <td class="align-right">{{item.purchases}}</td>
+        <td class="table-arr"><i ng-class="{'icon-up': item.isPurchasesUp, 'icon-down': !item.isPurchasesUp }"></i></td>
+        <td class="align-right">{{item.percent}}</td>
+        <td class="table-arr"><i ng-class="{'icon-up': item.isPercentUp, 'icon-down': !item.isPercentUp }"></i></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+    </div>
+
+  </div>
+</div>
