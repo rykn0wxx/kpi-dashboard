@@ -96,7 +96,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('deploy', function() {
-  return gulp.src(conf.paths.dist)
+  return gulp.src('./release/**/*')
     .pipe(ghPages());
 });
 
