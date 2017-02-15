@@ -1,0 +1,46 @@
+@mixin verthreecolors($start, $mid, $midstop, $end) {
+  background-image: -webkit-linear-gradient($start, $mid $midstop, $end);
+  background-image: -o-linear-gradient($start, $mid $midstop, $end);
+  background-image: linear-gradient($start, $mid $midstop, $end);
+  background-repeat: no-repeat;
+}
+
+$gray: #2c3e50;
+$txtcolor:            #C8C8C8;
+
+.rykn0wxx {
+
+  .ui-grid-top-panel {
+    @include verthreecolors(darken($gray, 14%), darken($gray, 8%), 40%, darken($gray, 10%));
+    color: $txtcolor;
+    font-weight: 400;
+  }
+
+  .ui-grid-row {
+    background-color: $gray;
+    .ui-grid-cell {
+      &.ui-grid-row-header-cell {
+        background-color: darken($gray, 8%);
+        border-bottom-color: #dce4ec;
+      }
+      .ui-grid-tree-base-row-header-buttons {
+        color: $txtcolor;
+      }
+    }
+  }
+
+  .ui-grid-tree-header-row {
+    font-weight: 500;
+  }
+
+  .ui-grid-menu-button {
+    @include verthreecolors(darken($gray, 18%), darken($gray, 10%), 40%, darken($gray, 14%));
+    border-color: rgba(0,0,0,0.5);
+    color: $txtcolor;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      @include verthreecolors(darken($gray, 24%), darken($gray, 16%), 40%, darken($gray, 20%));
+      color: #fff;
+    }
+  }
+}

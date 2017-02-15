@@ -3,9 +3,10 @@ $infobox-boxshadow: 0px 20px 25px -10px rgba(0, 0, 0, 0.25);
 .rykn0wxx {
 
   .info-box {
+    color: #050709;
     display: block;
     min-height: 90px;
-    background: mix(#fafafa, #B0BEC5, 90%);;
+    background: #909bab !important;
     width: 100%;
     box-shadow: $infobox-boxshadow;
     border-radius: 2px;
@@ -15,13 +16,16 @@ $infobox-boxshadow: 0px 20px 25px -10px rgba(0, 0, 0, 0.25);
       margin-left: 90px;
     }
     .info-box-number {
+      color: #292929;
       display: block;
-      font-weight: bold;
-      font-size: 18px;
+      font-weight: 500;
+      font-size: 16px;
     }
     .info-box-text {
       display: block;
-      font-size: 14px;
+      letter-spacing: 0.5px;
+      line-height: 1.5;
+      font-size: 18px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -29,6 +33,8 @@ $infobox-boxshadow: 0px 20px 25px -10px rgba(0, 0, 0, 0.25);
   }
 
   .info-box-icon {
+    color: #2b2b2b;
+    opacity: 0.7;
     border-radius: 2px 0;
     display: block;
     float: left;
@@ -38,5 +44,23 @@ $infobox-boxshadow: 0px 20px 25px -10px rgba(0, 0, 0, 0.25);
     font-size: 45px;
     line-height: 90px;
     background: rgba(0,0,0,0.1);
+  }
+
+  .metric-label {
+    background: $primary;
+    color: #fff;
+    padding: 6px;
+    line-height: 20px;
+    min-height: 36px;
+    align-items: center;
+    vertical-align: middle;
+    min-width: 150px;
+    > span {
+      display: block;
+      text-align: center;
+      white-space: nowrap;
+      line-height: 24px;
+      text-transform: uppercase;
+    }
   }
 }

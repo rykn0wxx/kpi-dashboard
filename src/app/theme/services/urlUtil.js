@@ -16,7 +16,7 @@
       dev: 'localhost:3000',
       own: '172.19.7.101:3000',
       dst: '172.19.7.36:3000'
-    };
+    }; 
 
     function cleanData (respObj) {
       var convData = [];

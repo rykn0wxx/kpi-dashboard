@@ -1,0 +1,28 @@
+<div class="gb-widget white-bg" ng-repeat="m in metrics">
+  <div class="gb-widget-icon gb-widget-icon-top bg-green-light to-left">
+    <div class="layout-row layout-align-space-between-center">
+      <div class="col-xs-7 col-sm-4 l-pad-20">
+        <!-- <h2 class="main-title bold">{{ m.metric }}</h2> -->
+        <a class="main-title bold"
+          ui-sref-active="active"
+          ui-sref="drilldown2.perKpi({kpi: m.field})">{{ m.metric }}</a>
+      </div>
+      <div class="col-xs-4 col-sm-4 to-center show-768 no-pad">
+        <div class="spark-chart">
+          <span class="animated fadeIn" jq-spark data="m.trendGlobal" ng-model="m.trendGlobal" opts="{{ {width:'auto'} }}"></span>
+        </div>
+      </div>
+      <div class="col-xs-5 col-sm-4 to-right">
+        <span class="md-headline bold animated fadeIn">{{ m.global }} <i class="fa hidden-xs animated {{m.indicator}}"></i> </span>
+      </div>
+    </div>
+  </div>
+  <div class="gb-widget-content to-center">
+    <div class="row">
+      <div class="reg-box col-md-3 col-sm-3 col-xs-6" ng-repeat="(reg, va) in m.regions">
+        <span class="md-subhead animated">{{ va[0] }} <i class="animated fa " ng-class="{'fa-arrow-up slideInUp color-lime-dark':va[1], 'fa-arrow-down slideInDown color-red-light':!va[1]}"></i></span>
+        <h4 class="bold">{{ reg }}</h4>
+      </div>
+    </div>
+  </div>
+</div>

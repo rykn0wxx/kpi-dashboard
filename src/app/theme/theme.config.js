@@ -9,7 +9,7 @@
     .config(config);
 
   /** @ngInject */
-  function config(baConfigProvider, colorHelper, $provide) {
+  function config(baConfigProvider, colorHelper, $provide, $mdThemingProvider, $mdAriaProvider) {
     $provide.decorator('$uiViewScroll', uiViewScrollDecorator);
     //baConfigProvider.changeTheme({blur: true});
     //
@@ -20,6 +20,17 @@
     //    white: '#ffffff',
     //  },
     // });
+
+    $mdThemingProvider
+      .theme('default')
+      .primaryPalette('blue-grey')
+      .accentPalette('grey')
+      .warnPalette('pink')
+      .backgroundPalette('blue-grey');
+      // .dark();
+
+    $mdAriaProvider.disableWarnings();
+
   }
 
   /** @ngInject */

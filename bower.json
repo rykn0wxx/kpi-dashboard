@@ -52,6 +52,7 @@
     "ionrangeslider": "2.1.4",
     "angular-bootstrap": "~1.3.3",
     "angular-animate": "~1.5.8",
+    "angular-material": "^1.1.3",
     "textAngular": "~1.4.6",
     "angular-xeditable": "~0.5.0",
     "ng-js-tree": "~0.0.7",
@@ -64,16 +65,16 @@
     "dcjs": "^2.1.2",
     "angular-daterangepicker": "^0.2.2",
     "material-design-iconic-font": "^2.2.0",
+    "restangular": "^1.6.1",
+    "angular-ui-grid": "^4.0.2",
     "ng-knob": "^0.1.3",
     "angular-cookies": "^1.6.1",
     "angular-dc": "^0.0.8",
     "highcharts": "5.0.0",
     "highcharts-ng": "^1.0.0",
-    "angular-material": "^1.1.3",
     "angular-nvd3": "^1.0.9",
     "angular-charts": "^0.2.7",
-    "accounting": "^0.3.2",
-    "restangular": "^1.6.1"
+    "accounting": "^0.3.2"
   },
   "resolutions": {
     "angular": "~1.5.8",
@@ -82,20 +83,10 @@
     "moment": "~2.10.6"
   },
   "overrides": {
-    "angular-material": {
-      "main": [
-        "angular-material.css"
-      ]
-    },
     "highcharts": {
       "main": [
         "css/highstock.css",
-        "highstock.js",
-        "highcharts-more.js",
-        "modules/data.js",
-        "modules/exporting.js",
-        "modules/offline-exporting.js",
-        "modules/drilldown.js"
+        "highstock.js"
       ]
     },
     "amcharts": {

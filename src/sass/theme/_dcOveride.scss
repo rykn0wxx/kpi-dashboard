@@ -1,0 +1,24 @@
+.rykn0wxx {
+
+  .dc-chart {
+    margin-right: 15px;
+    overflow: visible;
+    transition: all 0.3s ease-in-out;
+    svg {
+      overflow: visible;
+    }
+    .pie-slice {
+      &.pie-label {
+        font-size: 14px;
+        fill: rgba(5,7,9,1);
+      }
+    }
+    .selected {
+      path {
+        stroke-width: 1.5;
+        stroke: rgba(0,0,0,8);
+      }
+    }
+  }
+
+}

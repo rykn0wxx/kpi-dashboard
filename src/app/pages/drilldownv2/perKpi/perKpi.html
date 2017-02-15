@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-xs-6">
+      <p class="input-group">
+        <span class="input-group-btn">
+          <button  ng-click="toOpen()" class="btn btn-primary pull-right btn-daterange" id="daterange-btn">
+            <span ng-if="!curMonth" style="min-width:140px; display:block;"><i class="fa fa-calendar fa-fw"></i> Select Month Coverage  <i class="fa fa-caret-down fa-fw"></i> </span>
+            <span ng-if="curMonth" style="min-width:140px; display:block;"><i class="fa fa-calendar fa-fw"></i> {{curMonth | date:'yyyy MMM' }}   <i class="fa fa-caret-down fa-fw"></i> </span>
+          </button>
+        </span>
+        <input type="text" class="hide form-control inp-daterange" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="curMonth" is-open="opened" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
+      </p>
+  </div>
+  <div class="col-xs-6">
+    <div class="pull-right">
+      <div class="md-whiteframe-4dp layout-align-center-center metric-label">
+        <span class="md-subhead">{{ kpiSelected.metric }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div ba-panel ba-panel-class="clearfix panel-transparent" class="col-md-12">
+    <mini-blocks sel-kpi="kpiSelected" month-filter="curMonth" upctrl="vmDrillv2Kpi"></mini-blocks>
+  </div>
+</div>
+
+<div class="row">
+  <div ba-panel ba-panel-class="clearfix panle-transparent" class="col-md-12">
+    <md-sidenav class="md-sidenav-right" md-component-id="right" md-whiteframe="8">
+      <md-toolbar class="md-theme-indigo">
+        <h3 class="md-toolbar-tools">Metrics</h3>
+      </md-toolbar>
+      <md-content layout="column" layout-align="center start">
+        <p>
+          Select a metric to view trend.
+        </p>
+        <div flex ng-repeat="m in metrics">
+          <md-button ng-click="buildSeries(true, m.field)" class="md-accent md-raised md-hue-3">
+            {{m.metric}}
+          </md-button>
+        </div>
+      </md-content>
+    </md-sidenav>
+    <md-whiteframe class="md-whiteframe-4dp visual-block" flex layout layout-align="center center">
+
+      <div class="toggler" layout="row" layout-align="end start" >
+        <md-button class="md-fab md-fab-top-right md-mini md-warn" ng-click="toggleRight()">
+          <md-icon><i class="fa fa-navicon" style="display:block; line-height: 24px;"></i></md-icon>
+        </md-button>
+      </div>
+
+      <div class="toggler-content hc-container" layout="row">
+        <highchart id="chart1" config="chartConfig" width="100%;"></highchart>
+      </div>
+
+    </md-whiteframe>
+  </div>
+</div>

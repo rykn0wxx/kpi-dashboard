@@ -6,7 +6,7 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.dashboards.executive')
-    .controller('GlobalBlockCtrl', GlobalBlockPageCtrl);
+    .controller('GlobalBlock2Ctrl', GlobalBlockPageCtrl);
 
   /** @ngInject */
   function GlobalBlockPageCtrl ($scope, $window, $rootScope, $timeout, metrics, calcUtil) {

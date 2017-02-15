@@ -1,12 +1,18 @@
-<header class="container">
-  <a class="item"
-    ui-sref="rest.one"
-    ui-sref-active="active"
-  >
-    rest one
-  </a>
-</header>
+<section class="panel-primary animated zoomIn">
 
-<section class="content">
-  <ui-view></ui-view>
+  <div class="container-fluid no-padding">
+    <div id="grid1" ui-grid="gridOptions" ui-grid-pagination ui-grid-resize-columns ui-grid-pinning ui-grid-move-columns ui-grid-grouping class="grid"></div>
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <h4 flex md-truncate>Current page: {{ gridApi.pagination.getPage() }} of {{ gridApi.pagination.getTotalPages() }}</h4>
+        <md-button class="md-raised md-accent md-hue-2" ng-click="gridApi.pagination.previousPage()">
+          <md-icon class="ion-chevron-left" style="line-height:24px;font-size:24px"></md-icon>
+        </md-button>
+        <md-button class="md-raised md-accent md-hue-2" ng-click="gridApi.pagination.nextPage()">
+          <md-icon class="ion-chevron-right" style="line-height:24px;font-size:24px"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+  </div>
+
 </section>

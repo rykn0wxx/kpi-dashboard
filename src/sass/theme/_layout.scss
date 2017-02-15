@@ -237,4 +237,18 @@ a {
       margin-left: 0;
     }
   }
+  .toggling-container {
+    position: relative;
+  }
+
+}
+
+.clearfix {
+  &:before, &:after {
+    content: ' ';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
 }

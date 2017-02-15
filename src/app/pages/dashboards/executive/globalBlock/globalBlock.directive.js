@@ -6,7 +6,7 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.dashboards.executive')
-    .directive('globalBlock', globalBlockDirective);
+    .directive('globalBlock2', globalBlockDirective);
 
   /** @ngInject */
   function globalBlockDirective () {
@@ -15,9 +15,9 @@
       scope: {
         globalData: '='
       },
-      controller: 'GlobalBlockCtrl',
+      controller: 'GlobalBlock2Ctrl',
       templateUrl: 'app/pages/dashboards/executive/globalBlock/globalBlock.tmpl.html',
-      controllerAs: 'vmGlobalBlock'
+      controllerAs: 'vmGlobalBlock2'
     };
   }
 })();

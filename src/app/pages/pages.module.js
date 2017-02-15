@@ -10,12 +10,16 @@
     'ngCookies',
     'chart.js',
     'angularCharts',
-    'restangular',
+    // 'restangular',
+    'highcharts-ng',
 
 
     'BlurAdmin.pages.dashboards',
-    'BlurAdmin.pages.drilldown',
-    'BlurAdmin.pages.rest'
+    // 'BlurAdmin.pages.drilldown',
+    'BlurAdmin.pages.rest',
+    'BlurAdmin.pages.dashboardv2',
+    'BlurAdmin.pages.drilldownv2',
+    'BlurAdmin.pages.custom'
 
   ])
     .config(routeConfig);
@@ -25,10 +29,10 @@
     $urlRouterProvider.otherwise('/dashboards');
 
     DataProviderProvider
-      .setBaseUrl('http://localhost:3000')
-      //.setBaseUrl('http://172.19.7.36:3000')
-      //.setEnv('dist');
-      .setEnv('dev');
+      //.setBaseUrl('http://localhost:3000')
+      .setBaseUrl('http://172.19.7.36:3000')
+      .setEnv('dist');
+      //.setEnv('dev');
 
     var layoutColors = baConfigProvider.colors;
     ChartJsProvider.setOptions({

@@ -1,0 +1,54 @@
+.rykn0wxx {
+  .boxitem {
+    &.ng-leave {
+      animation-duration: 0.2s;
+      animation-fill-mode: both;
+      animation-name: zoomOut;
+    }
+    &.ng-enter {
+      animation-duration: 0.5s;
+      animation-fill-mode: both;
+      animation-name: zoomIn;
+      animation-delay: 0.2s
+    }
+  }
+}
+
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.zoomOut {
+  animation-name: zoomOut;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    position: absolute;
+    transform: scale3d(.3, .3, .3);
+  }
+  1% {
+    position: relative;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+}

@@ -1,4 +1,22 @@
 .rykn0wxx {
+  .hc-container {
+    position: relative;
+    background: #c5cAe9;
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    &:before, &:after {
+      content: ' ';
+      display: table;
+      box-sizing: content-box;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+  .visual-block {
+    position: relative;
+  }
   .slides {
     margin: 0 auto;
     max-width: 800px;

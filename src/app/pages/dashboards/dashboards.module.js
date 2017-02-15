@@ -18,10 +18,10 @@
       name: 'dashboards',
       template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
       abstract: true,
-      title: 'Dashboard',
+      title: 'Dashboard - X',
       sidebarMeta: {
         icon: 'ion-android-laptop',
-        order: 0
+        order: 700
       }
     });
   }

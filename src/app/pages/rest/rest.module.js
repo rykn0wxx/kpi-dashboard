@@ -14,10 +14,19 @@
         url: '/rest',
         templateUrl: 'app/pages/rest/rest.html',
         name: 'restdemo',
-        title: 'Rest',
+        title: 'Drilldown',
         sidebarMeta: {
           icon: 'ion-grid',
-          order: 200
+          order: 400
+        },
+        resolve: {
+          collection: function (restFactory, $q) {
+            var defer = $q.defer();
+            restFactory.all('executives').getList().then(function(dta) {
+              defer.resolve(dta.plain());
+            });
+            return defer.promise;
+          }
         },
         controller: 'RestCtrl',
         controllerAs: 'vmRest'
@@ -31,6 +40,7 @@
         controllerAs: 'vmRestOne'
       });
   }
+
 
 })();
 //   angular.module('BlurAdmin.rest', [])

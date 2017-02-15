@@ -1,0 +1,9 @@
+<div class="col-md-3 col-sm-6 col-xs-12 animated boxitem" ng-repeat="blk in inBoxInfo">
+  <div class="info-box green-soft-bg">
+    <span class="info-box-icon"><i class="fa {{blk.icon}}"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text md-title" ng-click="zBuildSeries(blk.name)">{{ blk.name }}</span>
+      <span class="info-box-number md-subhead">{{ blk.data }}</span>
+    </div>
+  </div>
+</div>
